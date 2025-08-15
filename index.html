@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#7a001f" />
+  <title>d'Frozen — Frozen Food Enak & Praktis</title>
+  <link rel="preload" href="assets/logo.svg" as="image" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">
+        <img src="assets/logo.svg" alt="Logo d'Frozen" width="48" height="48" />
+        <span>d'Frozen</span>
+      </a>
+      <nav class="nav">
+        <a href="#produk">Produk</a>
+        <a href="#testimoni">Testimoni</a>
+        <a href="#kritik-saran">Kritik & Saran</a>
+        <a href="#lokasi">Lokasi</a>
+      </nav>
+      <button class="cart-button" id="openCartBtn" aria-label="Buka keranjang belanja">
+        <img src="assets/cart.svg" alt="" width="22" height="22" />
+        <span id="cartCount" class="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>Frozen Food Enak & Praktis</h1>
+        <p>Stok makanan favorit keluarga — siap goreng, siap makan! Pilihan berkualitas, harga hemat.</p>
+        <a href="#produk" class="btn-primary">Lihat Produk</a>
+      </div>
+      <div class="hero-art">
+        <img src="assets/hero-wave.svg" alt="" />
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="produk" class="section">
+      <div class="container">
+        <header class="section-head">
+          <h2>Terlaris Minggu Ini</h2>
+          <p>Maksimal 5 produk pilihan pelanggan kami.</p>
+        </header>
+
+        <div class="slider" role="region" aria-label="Slider produk terlaris">
+          <button class="slider-nav prev" id="sliderPrev" aria-label="Sebelumnya">‹</button>
+          <div class="slider-track" id="sliderTrack" aria-live="polite">
+            <!-- Cards injected by JS -->
+          </div>
+          <button class="slider-nav next" id="sliderNext" aria-label="Berikutnya">›</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimoni" class="section alt">
+      <div class="container">
+        <header class="section-head">
+          <h2>Testimoni Pelanggan</h2>
+          <p>Suara mereka tentang d'Frozen.</p>
+        </header>
+        <ul id="testimonialList" class="testi-list"><!-- populated by JS --></ul>
+
+        <div class="card form-card">
+          <h3>Tulis Testimoni</h3>
+          <form id="testimonialForm" class="form" novalidate>
+            <div class="grid">
+              <label>
+                <span>Nama</span>
+                <input type="text" id="tName" placeholder="Nama Anda" required />
+              </label>
+              <label>
+                <span>Rating</span>
+                <select id="tRating" required>
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3">3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              <span>Pesan</span>
+              <textarea id="tMessage" rows="3" placeholder="Ceritakan pengalaman Anda" required></textarea>
+            </label>
+            <button type="submit" class="btn-primary">Kirim Testimoni</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="kritik-saran" class="section">
+      <div class="container">
+        <header class="section-head">
+          <h2>Kritik & Saran</h2>
+          <p>Kami selalu ingin jadi lebih baik. Sampaikan masukan Anda.</p>
+        </header>
+        <div class="card form-card">
+          <form id="feedbackForm" class="form" novalidate>
+            <div class="grid">
+              <label>
+                <span>Nama</span>
+                <input type="text" id="fName" placeholder="Nama Anda" required />
+              </label>
+              <label>
+                <span>Email</span>
+                <input type="email" id="fEmail" placeholder="email@contoh.com" required />
+              </label>
+            </div>
+            <label>
+              <span>Pesan</span>
+              <textarea id="fMessage" rows="4" placeholder="Tulis kritik/saran Anda" required></textarea>
+            </label>
+            <div class="actions">
+              <button type="submit" class="btn-primary">Kirim</button>
+              <button type="button" id="feedbackCopy" class="btn-ghost">Salin ke Clipboard</button>
+            </div>
+            <p class="hint">Catatan: Karena GitHub Pages tidak memiliki server, data disimpan di browser Anda.
+              Anda juga bisa menempel pesan yang tersalin dan kirim via WhatsApp/Email.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="lokasi" class="section alt">
+      <div class="container">
+        <header class="section-head">
+          <h2>Lokasi Toko</h2>
+          <p>Silakan berkunjung atau hubungi kami.</p>
+        </header>
+        <div class="card">
+          <p><strong>Alamat:</strong> Jl. Dipenegori 74, Bogor.</p>
+          <div class="map-embed">
+            <iframe title="Peta d'Frozen" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://maps.google.com/maps?q=Jl.%20Dipenegori%2074,%20Bogor&t=&z=16&ie=UTF8&iwloc=&output=embed">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> d'Frozen — Semua Hak Dilindungi.</p>
+      <button class="btn-primary" id="goCheckout">Checkout</button>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <aside id="cartDrawer" class="cart-drawer" aria-hidden="true" aria-labelledby="cartTitle" role="dialog">
+    <div class="cart-drawer-inner">
+      <header class="cart-drawer-head">
+        <h3 id="cartTitle">Keranjang Belanja</h3>
+        <button id="closeCartBtn" class="icon-btn" aria-label="Tutup keranjang">×</button>
+      </header>
+      <ul id="cartItems" class="cart-items"><!-- populated by JS --></ul>
+      <div class="cart-summary">
+        <div class="line"><span>Subtotal</span><strong id="cartSubtotal">Rp0</strong></div>
+        <button class="btn-primary w-full" id="checkoutBtn">Checkout</button>
+      </div>
+    </div>
+  </aside>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
